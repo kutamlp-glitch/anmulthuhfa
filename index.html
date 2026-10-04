@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انمول تحفہ – Humsafar Urdu Class 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Malayalam:wght@400;700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d3a8a;--pencil:#ffc928;--paper:#fffdf3;--red:#e2453c;--green:#2e9e5b;--sky:#e6f0ff;--line:#c9d6f5}
+@media(prefers-color-scheme:dark){:root{--paper:#1c2238;--sky:#26304f;--line:#3a4772;--ink:#cfe0ff}body{color:#f1f3ff!important}}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Baloo 2','Noto Sans Malayalam',sans-serif;background:var(--sky);color:#222;font-size:18px;
+background-image:repeating-linear-gradient(transparent 0 35px,var(--line) 35px 36px)}
+.ur{font-family:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq',serif;direction:rtl;line-height:2.1}
+.ml{font-family:'Noto Sans Malayalam',sans-serif;font-size:.8em;opacity:.85}
+header{background:var(--pencil);padding:10px 16px 0;border-bottom:6px solid var(--ink);text-align:center;position:relative}
+header h1{margin:0;font-size:clamp(26px,6vw,44px);color:var(--ink)}
+header p{margin:0 0 6px;font-size:14px}
+#pencil{position:absolute;left:12px;top:8px;width:70px;transform:rotate(-20deg);animation:wob 2.4s ease-in-out 2}
+@keyframes wob{50%{transform:rotate(10deg)}}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px 0 0;justify-content:center;flex-wrap:wrap}
+nav button{font:inherit;font-weight:800;border:3px solid var(--ink);border-bottom:none;border-radius:14px 14px 0 0;background:#fff;color:var(--ink);padding:6px 12px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--ink);color:#fff}
+main{max-width:900px;margin:0 auto;padding:16px}
+section{display:none}section.on{display:block}
+.card{background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:14px 16px;margin:12px 0;box-shadow:5px 5px 0 var(--ink)}
+.btn{font:inherit;font-weight:800;font-size:18px;border:3px solid var(--ink);background:var(--pencil);color:#222;border-radius:30px;padding:8px 18px;cursor:pointer;box-shadow:0 4px 0 var(--ink)}
+.btn:active{transform:translateY(3px);box-shadow:none}
+.btn.alt{background:#fff}.btn.sm{padding:3px 12px;font-size:15px}
+:focus-visible{outline:4px solid var(--red);outline-offset:2px}
+.line{display:flex;gap:10px;align-items:center;border-bottom:2px dashed var(--line);padding:6px 0;flex-wrap:wrap}
+.line .txt{flex:1;min-width:220px}
+.line .ur{font-size:24px;text-align:right}
+.w{cursor:pointer;border-radius:8px;padding:0 2px}.w:hover,.w.k{background:#fff0a6;color:#222}
+.w.gl{border-bottom:3px dotted var(--red)}
+.title{font-size:clamp(34px,8vw,56px);text-align:center;color:var(--red);margin:0}
+#pop{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:20px;padding:10px 18px;max-width:92vw;display:none;z-index:9;text-align:center;box-shadow:0 6px 20px #0006}
+#pop .ur{font-size:26px;line-height:1.6}
+#vn{font-size:14px;background:#fff3c4;color:#222;padding:6px 10px;border-radius:10px;margin:8px 0;display:none}
+.bub{max-width:88%;padding:8px 14px;border-radius:18px;margin:8px 0;border:3px solid var(--ink)}
+.bub.K{background:#d6f5df;margin-right:auto}.bub.G{background:#ffe9a8;margin-left:auto}
+.bub.me{outline:4px solid var(--red);animation:pulse 1s infinite alternate}
+@keyframes pulse{to{transform:scale(1.03)}}
+.who{font-weight:800;font-size:14px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;direction:rtl;text-align:center}
+.cal .h{background:var(--red);color:#fff;border-radius:8px;font-family:'Noto Nastaliq Urdu';font-size:clamp(11px,2.8vw,17px);padding:4px 0}
+.cal button{font:inherit;font-weight:800;aspect-ratio:1;border:2px solid var(--line);background:#fff;color:#222;border-radius:50%;cursor:pointer;font-size:clamp(14px,4vw,22px)}
+.cal button.sun{color:var(--red)}.cal button.ring{border:3px solid var(--ink);background:#fff6c2}
+.cal button.sel{background:var(--ink);color:#fff}
+.opts{display:grid;gap:10px;margin-top:10px}
+.opt{font:inherit;font-size:22px;border:3px solid var(--ink);background:#fff;color:#222;border-radius:16px;padding:8px 14px;cursor:pointer;text-align:center}
+.opt.ok{background:#b8f0c8;animation:hop .5s}.opt.no{background:#ffd0cc;animation:shake .4s}
+@keyframes hop{50%{transform:translateY(-10px)}}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.fb{min-height:2.6em;font-weight:800;margin-top:8px}
+.bar{height:16px;background:#fff;border:3px solid var(--ink);border-radius:10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);width:0;transition:width .4s}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.face{width:84px;height:84px;border-radius:50%;border:4px solid var(--ink);display:grid;place-items:center;font-size:34px;font-weight:800;margin:0 auto 6px;color:#fff}
+.stamp{border:4px dashed var(--ink);background:#fff;border-radius:6px;padding:10px;text-align:center;min-height:120px;display:grid;place-items:center;cursor:pointer}
+.stamp.got{border-style:solid;background:#fff6c2;animation:hop .5s}
+.pop{position:fixed;pointer-events:none;font-size:34px;animation:fly 1.2s forwards;z-index:10}
+@keyframes fly{to{transform:translateY(-220px) rotate(40deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#pencil{display:none}@media(min-width:700px){#pencil{display:block}}
+</style>
+</head>
+<body>
+<header>
+<svg id="pencil" viewBox="0 0 120 20" aria-hidden="true"><rect x="0" y="3" width="90" height="14" fill="#2e7de0"/><rect x="0" y="3" width="90" height="4" fill="#e2453c"/><polygon points="90,3 120,10 90,17" fill="#f5d9a8"/><polygon points="108,7 120,10 108,13" fill="#333"/></svg>
+<h1 class="ur" style="line-height:1.6">انمول تحفہ</h1>
+<p>Humsafar Urdu · Class 5 · Unit 2 · Lesson 4 · സബക് ۴ · പേജ് 66–74</p>
+<nav role="tablist" id="nav"></nav>
+</header>
+<main>
+<div id="vn"></div>
+
+<section id="story"></section>
+<section id="role"></section>
+<section id="leaders"></section>
+<section id="cal"></section>
+<section id="num"></section>
+<section id="quiz"></section>
+</main>
+<div id="pop" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const el=(h)=>{const d=document.createElement('div');d.innerHTML=h;return d.firstElementChild};
+/* ---------- speech ---------- */
+let voice=null;
+function pick(){const v=speechSynthesis.getVoices();voice=v.find(x=>/^ur/i.test(x.lang))||v.find(x=>/^hi/i.test(x.lang))||null;
+ const n=$('#vn');if(v.length&&!v.some(x=>/^ur/i.test(x.lang))){n.style.display='block';n.textContent='ℹ️ ഈ ഉപകരണത്തിൽ ഉർദു ശബ്ദം ഇല്ല. Settings → Language & input → Text-to-speech ൽ Urdu (Pakistan) ഇൻസ്റ്റാൾ ചെയ്യുക. (No Urdu voice found on this device; install "Urdu – Pakistan" in text-to-speech settings. Chrome / Edge / Android work best.)'}}
+if('speechSynthesis' in window){pick();speechSynthesis.onvoiceschanged=pick}
+function say(t,rate=.8){return new Promise(r=>{if(!('speechSynthesis' in window))return r();speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(t.replace(/[۔]/g,'،'));u.lang='ur-PK';if(voice)u.voice=voice;u.rate=rate;u.onend=r;u.onerror=r;speechSynthesis.speak(u)})}
+const say2=say;
+/* ---------- glossary ---------- */
+const norm=w=>w.replace(/[\u064B-\u065F\u0670\u06D4!؟?،.:,"']/g,'');
+const G={}; ("پنسل=പെൻസിൽ|تحفہ=സമ്മാനം|انمول=അമൂല്യമായ|دوست=സുഹൃത്ത്|تلاش=തിരച്ചിൽ|گم=നഷ്ടപ്പെട്ട|کتاب=പുസ്തകം|خوش=സന്തോഷം|قیمتی=വിലപ്പെട്ട|پریشانی=ആശങ്ക/വിഷമം|ٹیچر=അധ്യാപിക|بچّوں=കുട്ടികൾ|بچّے=കുട്ടി|بچّو=കുട്ടികളേ|پیار=സ്നേഹം|کہانی=കഥ|ملنے=കാണാൻ|خاص=പ്രത്യേകമായ|اندر=ഉള്ളിൽ|باپو=ബാപ്പു (ഗാന്ധിജി)|جینتی=ജയന്തി|چھوٹے=ചെറിയ|آخر=ഒടുവിൽ|ملی=കിട്ടി|کلاس=ക്ലാസ്|سنیں=കേൾക്കും|آداب=നമസ്കാരം|ٹھیک=സുഖം/ശരി|لیجیے=ഇതാ എടുക്കൂ|وہی=അതേ|چاہیے=വേണം|کیوں=എന്തുകൊണ്ട്|کیسے=എങ്ങനെ|بابائے=രാഷ്ട്രപിതാവ്|قوم=രാജ്യം|دن=ദിവസം|ہفتے=ആഴ്ച|مہینے=മാസം|اکتوبر=ഒക്ടോബർ|اتوار=ഞായർ|پیر=തിങ്കൾ|منگل=ചൊവ്വ|بدھ=ബുധൻ|جمعرات=വ്യാഴം|جمعہ=വെള്ളി|سنیچر=ശനി|دیکھ=കണ്ട്|اُدھر=അങ്ങോട്ട്|اِدھر=ഇങ്ങോട്ട്|پیارے=പ്രിയപ്പെട്ട").split('|').forEach(p=>{const[a,b]=p.split('=');G[norm(a)]=b});
+function words(t){return t.split(' ').map(w=>{const m=G[norm(w)];return `<span class="w${m?' gl':''}" data-w="${w}" data-m="${m||''}" tabindex="0">${w}</span>`}).join(' ')}
+document.addEventListener('click',e=>{const w=e.target.closest('.w');if(!w)return;
+ document.querySelectorAll('.w.k').forEach(x=>x.classList.remove('k'));w.classList.add('k');
+ const p=$('#pop');p.innerHTML=`<div class="ur">${w.dataset.w.replace(/[۔!؟]/g,'')}</div><div class="ml">${w.dataset.m||'ഉച്ചരിച്ച് കേൾക്കൂ 🔊'}</div>`;p.style.display='block';clearTimeout(p.t);p.t=setTimeout(()=>p.style.display='none',3500);
+ say(w.dataset.w,.7)});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('w'))e.target.click()});
+function cheer(){const a=['⭐','🎉','✏️','🌟','👏'];for(let i=0;i<7;i++){const s=document.createElement('span');s.className='pop';s.textContent=a[i%5];s.style.left=(15+Math.random()*70)+'vw';s.style.top=(50+Math.random()*30)+'vh';document.body.appendChild(s);setTimeout(()=>s.remove(),1300)}}
+/* ---------- tabs ---------- */
+const tabs=[['story','📖 کہانی','കഥ'],['role','🎭 رول پلے','റോൾ പ്ലേ'],['leaders','🇮🇳 لیڈر','നേതാക്കൾ'],['cal','📅 کیلنڈر','കലണ്ടർ'],['num','🔢 گنتی اور ٹکٹ','അക്കം & സ്റ്റാമ്പ്'],['quiz','🏆 کوئز','ക്വിസ്']];
+tabs.forEach(([id,u,m],i)=>{const b=el(`<button role="tab" aria-selected="${i==0}" data-t="${id}"><span class="ur" style="line-height:1.5">${u}</span> <span class="ml">${m}</span></button>`);
+ b.onclick=()=>{speechSynthesis.cancel();document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x==b));document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==id));window.scrollTo(0,0)};$('#nav').appendChild(b)});
+$('#story').classList.add('on');
+/* ---------- STORY ---------- */
+const S=[
+['آج گاندھی جینتی ہے۔','ഇന്ന് ഗാന്ധി ജയന്തിയാണ്.'],
+['ٹیچر کلاس میں آئی۔ بچّوں سے کہنے لگیں۔','ടീച്ചർ ക്ലാസിൽ വന്നു. കുട്ടികളോട് പറഞ്ഞു.'],
+['بچّو! آج ہم گاندھی جی کی ایک کہانی سنیں گے۔','കുട്ടികളേ! ഇന്ന് നമ്മൾ ഗാന്ധിജിയുടെ ഒരു കഥ കേൾക്കും.'],
+['کاکا کالیلکر گاندھی جی کے دوست تھے۔','കാകാ കാലേൽകർ ഗാന്ധിജിയുടെ സുഹൃത്തായിരുന്നു.'],
+['ایک دن وہ گاندھی جی سے ملنے آئے۔','ഒരു ദിവസം അദ്ദേഹം ഗാന്ധിജിയെ കാണാൻ വന്നു.'],
+['اس وقت گاندھی جی اِدھر اُدھر کچھ تلاش کر رہے تھے۔','അപ്പോൾ ഗാന്ധിജി അങ്ങിങ്ങ് എന്തോ തിരയുകയായിരുന്നു.'],
+['باپو! آپ کیا تلاش کر رہے ہیں؟','ബാപ്പു! നിങ്ങൾ എന്താണ് തിരയുന്നത്?'],
+['کاکا! میری ایک پنسل گُم ہو گئی ہے۔','കാകാ! എന്റെ ഒരു പെൻസിൽ നഷ്ടപ്പെട്ടു.'],
+['باپو! یہ لیجیے میری پنسل!','ബാപ്പു! ഇതാ എന്റെ പെൻസിൽ എടുക്കൂ!'],
+['نہیں کاکا! مجھے وہی پنسل چاہیے۔','വേണ്ട കാകാ! എനിക്ക് ആ പെൻസിൽ തന്നെ വേണം.'],
+['باپو جی کی پریشانی دیکھ کر کاکا بھی پنسل تلاش کرنے لگے۔','ബാപ്പുജിയുടെ വിഷമം കണ്ട് കാകായും പെൻസിൽ തിരയാൻ തുടങ്ങി.'],
+['آخر ایک کتاب کے اندر سے پنسل ملی۔','ഒടുവിൽ ഒരു പുസ്തകത്തിനുള്ളിൽ നിന്ന് പെൻസിൽ കിട്ടി.'],
+['پنسل پا کر گاندھی جی بہت خوش ہوئے۔','പെൻസിൽ കിട്ടിയപ്പോൾ ഗാന്ധിജി വളരെ സന്തോഷിച്ചു.'],
+['ان کی خوشی دیکھ کر کاکا نے پوچھا۔','അദ്ദേഹത്തിന്റെ സന്തോഷം കണ്ട് കാകാ ചോദിച്ചു.'],
+['باپو! اس پنسل کی کیا خاص بات ہے؟','ബാപ്പു! ഈ പെൻസിലിന് എന്താണ് പ്രത്യേകത?'],
+['گاندھی جی نے کہا۔','ഗാന്ധിജി പറഞ്ഞു.'],
+['یہ پنسل میرے لیے ایک انمول تحفہ ہے!','ഈ പെൻസിൽ എനിക്ക് ഒരു അമൂല്യ സമ്മാനമാണ്!'],
+['وہ کیسے باپو؟','അത് എങ്ങനെ ബാപ്പു?'],
+['پیارے کاکا! یہ ایک چھوٹے بچّے کا تحفہ ہے۔','പ്രിയ കാകാ! ഇത് ഒരു ചെറിയ കുട്ടിയുടെ സമ്മാനമാണ്.'],
+['اس نے بڑے پیار سے مجھے دیا تھا۔','അവൻ വലിയ സ്നേഹത്തോടെ എനിക്ക് തന്നതാണ്.'],
+['میرے لیے یہ پنسل بہت قیمتی ہے۔','എനിക്ക് ഈ പെൻസിൽ വളരെ വിലപ്പെട്ടതാണ്.']];
+(()=>{const r=$('#story');
+ r.innerHTML=`<div class="card"><h2 class="title ur">انمول تحفہ</h2><p style="text-align:center;margin:0" class="ml">അമൂല്യ സമ്മാനം · ഏതെങ്കിലും വാക്കിൽ തൊട്ടാൽ അർത്ഥം + ഉച്ചാരണം കേൾക്കാം (ചുവന്ന കുത്തുള്ളവയ്ക്ക് അർത്ഥം ഉണ്ട്)</p>
+ <p style="text-align:center"><button class="btn" id="all">▶ پوری کہانی سنیے · മുഴുവൻ കേൾക്കൂ</button> <button class="btn alt" id="stop">⏹</button> <label class="ml"><input type="checkbox" id="showml" checked> മലയാളം</label></p></div><div class="card" id="sl"></div>`;
+ const sl=$('#sl');S.forEach(([u,m],i)=>{sl.appendChild(el(`<div class="line" id="L${i}"><button class="btn sm" aria-label="listen">🔊</button><div class="txt"><div class="ur">${words(u)}</div><div class="ml mm">${m}</div></div></div>`));
+  sl.lastChild.querySelector('button').onclick=()=>say(u)});
+ $('#showml').onchange=e=>document.querySelectorAll('.mm').forEach(x=>x.style.display=e.target.checked?'':'none');
+ let stopF=false;$('#stop').onclick=()=>{stopF=true;speechSynthesis.cancel()};
+ $('#all').onclick=async()=>{stopF=false;for(let i=0;i<S.length&&!stopF;i++){const l=$('#L'+i);l.style.background='#fff0a6';l.scrollIntoView({block:'center',behavior:'smooth'});await say(S[i][0]);l.style.background=''}}})();
+/* ---------- ROLE PLAY ---------- */
+const D=[['K','آداب باپو جی۔','നമസ്കാരം ബാപ്പുജി.'],['G','آداب کاکا، آپ کیسے ہیں؟','നമസ്കാരം കാകാ, സുഖമാണോ?'],['K','میں ٹھیک ہوں۔ آپ کیا تلاش کر رہے ہیں؟','സുഖം. നിങ്ങൾ എന്താണ് തിരയുന്നത്?'],['G','میری ایک پنسل گُم ہو گئی ہے۔','എന്റെ ഒരു പെൻസിൽ നഷ്ടപ്പെട്ടു.'],['K','اچھا۔ یہ لیجیے میری پنسل۔','ശരി. ഇതാ എന്റെ പെൻസിൽ.'],['G','نہیں کاکا۔ مجھے وہی پنسل چاہیے۔','വേണ്ട കാകാ. എനിക്ക് ആ പെൻസിൽ തന്നെ വേണം.'],['K','کیوں باپو جی؟','എന്തുകൊണ്ട് ബാപ്പുജി?'],['G','وہ پنسل میرے لیے ایک انمول تحفہ ہے۔','ആ പെൻസിൽ എനിക്ക് അമൂല്യ സമ്മാനമാണ്.']];
+const N={K:'کاکا کالیلکر',G:'گاندھی جی'};
+(()=>{const r=$('#role');
+ r.innerHTML=`<div class="card"><h2 class="ur" style="margin:0">رول پلے کیجیے <span class="ml">· റോൾ പ്ലേ</span></h2><p class="ml">നിങ്ങളുടെ വേഷം തിരഞ്ഞെടുക്കൂ. മറ്റേ ആളുടെ വാക്യങ്ങൾ ഞാൻ വായിക്കും; നിങ്ങളുടെ ഊഴത്തിൽ ഉറക്കെ വായിച്ച് "ہو گیا" അമർത്തൂ.</p>
+ <button class="btn" data-r="K">کاکا کالیلکر</button> <button class="btn alt" data-r="G">گاندھی جی</button> <button class="btn alt" data-r="N">👂 صرف سنیں</button></div><div class="card" id="rp"></div>`;
+ const rp=$('#rp');
+ const draw=()=>{rp.innerHTML=D.map((d,i)=>`<div class="bub ${d[0]}" id="B${i}"><div class="who">${N[d[0]]}</div><div class="ur" style="font-size:24px">${words(d[1])}</div><div class="ml">${d[2]}</div></div>`).join('')};draw();
+ let run=0;
+ r.querySelectorAll('[data-r]').forEach(b=>b.onclick=async()=>{const me=b.dataset.r;const id=++run;draw();
+  for(let i=0;i<D.length&&id==run;i++){const bb=$('#B'+i);bb.scrollIntoView({block:'center',behavior:'smooth'});
+   if(D[i][0]==me){bb.classList.add('me');const bt=el('<button class="btn sm">ہو گیا ✔ (ഞാൻ വായിച്ചു)</button>');bb.appendChild(bt);await new Promise(ok=>bt.onclick=ok);bt.remove();bb.classList.remove('me');bb.style.background='#b8f0c8'}
+   else await say(D[i][1])}
+  if(id==run){cheer();const p=$('#pop');p.textContent='شاباش! ശബാഷ്! 🎉';p.style.display='block';setTimeout(()=>p.style.display='none',2500)}})})();
+/* ---------- LEADERS ---------- */
+const LD=[['G','گ','#2e9e5b',['یہ گاندھی جی ہیں۔','گاندھی جی کا پورا نام موہن داس کرم چند گاندھی ہے۔','وہ ہمارے بابائے قوم ہیں۔'],'ഇത് ഗാന്ധിജിയാണ്. പൂർണ്ണനാമം മോഹൻദാസ് കരംചന്ദ് ഗാന്ധി. അദ്ദേഹം നമ്മുടെ രാഷ്ട്രപിതാവാണ്.'],
+['N','ن','#e2453c',['یہ نہرو ہیں۔','ان کا پورا نام جواہر لال نہرو ہے۔','وہ ہندوستان کے پہلے وزیر اعظم تھے۔'],'ഇത് നെഹ്റുവാണ്. പൂർണ്ണനാമം ജവഹർലാൽ നെഹ്റു. ഇന്ത്യയുടെ ആദ്യ പ്രധാനമന്ത്രി.'],
+['A','آ','#1d3a8a',['یہ آزاد ہیں۔','ان کا پورا نام مولانا ابوالکلام آزاد ہے۔','وہ ہندوستان کے پہلے وزیر تعلیم تھے۔'],'ഇത് ആസാദാണ്. പൂർണ്ണനാമം മൗലാന അബുൾ കലാം ആസാദ്. ഇന്ത്യയുടെ ആദ്യ വിദ്യാഭ്യാസ മന്ത്രി.']];
+(()=>{const r=$('#leaders');
+ r.innerHTML=`<div class="card"><h2 class="ur" style="margin:0">قومی لیڈر <span class="ml">· ദേശീയ നേതാക്കൾ</span></h2><p class="ml">ഓരോ നേതാവിനെയും കുറിച്ച് വായിക്കൂ. 🔊 അമർത്തി കേൾക്കൂ. (പുസ്തകത്തിലെ ചിത്രം നോക്കി തിരിച്ചറിയൂ!)</p></div><div class="grid3">`+LD.map(l=>`<div class="card"><div class="face" style="background:${l[2]}" class="ur">${l[1]}</div>${l[3].map(s=>`<div class="ur" style="font-size:22px;text-align:right">${words(s)}</div>`).join('')}<p class="ml">${l[4]}</p><button class="btn sm" data-s="${l[3].join(' ')}">🔊 سنیے</button></div>`).join('')+`</div>`;
+ r.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>say(b.dataset.s))})();
+/* ---------- CALENDAR ---------- */
+const DAYS=['اتوار','پیر','منگل','بدھ','جمعرات','جمعہ','سنیچر'],DM=['ഞായർ','തിങ്കൾ','ചൊവ്വ','ബുധൻ','വ്യാഴം','വെള്ളി','ശനി'];
+const UN='صفر|ایک|دو|تین|چار|پانچ|چھ|سات|آٹھ|نو|دس|گیارہ|بارہ|تیرہ|چودہ|پندرہ|سولہ|سترہ|اٹھارہ|انیس|بیس|اکیس|بائیس|تیئیس|چوبیس|پچیس|چھبّیس|ستائیس|اٹھائیس|انتیس|تیس|اکتیس'.split('|');
+const RING=[2,6,7,15,18,24,26];
+(()=>{const r=$('#cal');
+ r.innerHTML=`<div class="card"><h2 class="ur" style="margin:0">اکتوبر ۲۰۲۴ <span class="ml">· കലണ്ടർ</span></h2><p class="ml">ഒരു തീയതി അമർത്തൂ — അത് ഏത് ദിവസമാണെന്ന് അറിയാം. വട്ടമിട്ടവ റൂബി അടയാളപ്പെടുത്തിയ തീയതികൾ.</p>
+ <div class="cal" id="cg"></div><div class="card" id="cr" style="text-align:center;min-height:100px"><span class="ml">👆 ഒരു തീയതി തിരഞ്ഞെടുക്കൂ</span></div>
+ <button class="btn" id="cq">🎯 ദിവസം ഊഹിക്കൂ (Day challenge)</button> <div id="cc"></div></div>
+ <div class="card"><h3 class="ur" style="margin:0">سوال <span class="ml">· ചോദ്യങ്ങൾ</span></h3>
+ ${[['اکتوبر کے مہینے میں کتنے دن ہوتے ہیں؟','اکتیس (۳۱) دن','ഒക്ടോബറിൽ എത്ര ദിവസം?'],['ایک ہفتے میں کتنے دن ہوتے ہیں؟','سات (۷) دن','ഒരാഴ്ചയിൽ എത്ര ദിവസം?'],['گاندھی جینتی کب مناتے ہیں؟','۲ اکتوبر کو','ഗാന്ധി ജയന്തി എപ്പോൾ?']].map((q,i)=>`<div class="line"><div class="txt"><div class="ur" style="font-size:22px">${words(q[0])}</div><div class="ml">${q[2]}</div></div><button class="btn sm alt" data-a="${q[1]}">ഉത്തരം കാണൂ</button></div>`).join('')}</div>`;
+ const cg=$('#cg');DAYS.forEach(d=>cg.appendChild(el(`<div class="h">${d}</div>`)));
+ for(let i=0;i<2;i++)cg.appendChild(el('<span></span>'));
+ for(let d=1;d<=31;d++){const wd=(d+1)%7;const b=el(`<button class="${wd==0?'sun':''} ${RING.includes(d)?'ring':''}">${d}</button>`);
+  // Oct 1 2024 = Tuesday (index 2); grid starts Sunday
+  b.onclick=()=>{cg.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');const w=(d+1)%7;
+   $('#cr').innerHTML=`<div class="ur" style="font-size:26px">${UN[d]} اکتوبر ${DAYS[w]} کا دن ہے۔</div><div class="ml">${d} ഒക്ടോബർ — ${DM[w]}</div>`;say(`${UN[d]} اکتوبر ${DAYS[w]} کا دن ہے`)};cg.appendChild(b)}
+ r.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{b.outerHTML=`<b class="ur" style="font-size:22px">${b.dataset.a}</b>`});
+ $('#cq').onclick=()=>{const d=RING[Math.floor(Math.random()*7)],w=(d+1)%7;const o=[w];while(o.length<3){const x=Math.floor(Math.random()*7);if(!o.includes(x))o.push(x)}o.sort(()=>Math.random()-.5);
+  $('#cc').innerHTML=`<p class="ur" style="font-size:24px">${UN[d]} اکتوبر کون سا دن ہے؟ <span class="ml">(${d} ഒക്ടോബർ ഏത് ദിവസം?)</span></p><div class="opts">${o.map(x=>`<button class="opt ur" data-x="${x}">${DAYS[x]}</button>`).join('')}</div>`;
+  $('#cc').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(+b.dataset.x==w){b.classList.add('ok');cheer();say(`${UN[d]} اکتوبر ${DAYS[w]} کا دن ہے`)}else b.classList.add('no')})}})();
+/* ---------- NUMBERS & STAMPS ---------- */
+const NW={5:'پانچ',10:'دس',15:'پندرہ',20:'بیس',25:'پچیس'},NO=['پانچ','دس','پندرہ','بیس','پچیس','تیس','تین','چار'];
+(()=>{const r=$('#num');
+ r.innerHTML=`<div class="card"><h2 class="ur" style="margin:0">گنتی <span class="ml">· അക്കങ്ങൾ (5, 10, 15, 20, 25)</span></h2><p class="ml">അക്കത്തിന് ചേരുന്ന ഉർദു വാക്ക് തൊടൂ. ✔ കിട്ടിയാൽ ശബ്ദം കേൾക്കാം.</p><div id="nl"></div></div>
+ <div class="card"><h2 class="ur" style="margin:0">ڈاک ٹکٹ البم <span class="ml">· സ്റ്റാമ്പ് ആൽബം</span></h2><p class="ml">ദേശീയ നേതാക്കളുടെ സ്റ്റാമ്പുകൾ ശേഖരിച്ച് ആൽബം ഉണ്ടാക്കൂ. ഓരോ കള്ളിയും അമർത്തി സ്റ്റാമ്പ് ഒട്ടിക്കൂ.</p>
+ <div class="grid3" id="st"></div><p class="ml">✏️ വീട്ടിൽ: യഥാർത്ഥ തപാൽ സ്റ്റാമ്പുകൾ ശേഖരിച്ച് നോട്ട്ബുക്കിൽ ഒട്ടിക്കൂ (പേജ് 74).</p></div>`;
+ const nl=$('#nl');Object.keys(NW).forEach(n=>{const o=[NW[n]];while(o.length<3){const x=NO[Math.floor(Math.random()*NO.length)];if(!o.includes(x))o.push(x)}o.sort(()=>Math.random()-.5);
+  const row=el(`<div class="line"><b style="font-size:36px;min-width:60px">${n}</b><div style="display:flex;gap:8px;flex-wrap:wrap">${o.map(x=>`<button class="opt ur" style="padding:2px 16px">${x}</button>`).join('')}</div></div>`);
+  row.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(b.textContent==NW[n]){b.classList.add('ok');b.textContent+=' ✔';say(NW[n]);cheer()}else{b.classList.add('no');setTimeout(()=>b.classList.remove('no'),500)}});nl.appendChild(row)});
+ [['جواہر لال نہرو','نہرو جنم شتی ۱۹۸۹','60','#e2453c'],['مولانا ابوالکلام آزاد','آزاد صد سالہ ۱۹۸۸','60','#1d3a8a'],['کاکا صاحب کالیلکر','کاکا صاحب کالیلکر ۱۹۸۵','50','#2e9e5b']].forEach(s=>{
+  const b=el(`<div class="stamp" tabindex="0" role="button"><span class="ml">ഇവിടെ അമർത്തൂ</span></div>`);
+  b.onclick=()=>{b.classList.add('got');b.innerHTML=`<div><div class="face" style="background:${s[3]}">${s[0][0]}</div><div class="ur" style="font-size:20px;line-height:1.8">${s[0]}</div><b>भारत INDIA ${s[2]}</b></div>`;say(s[0]);cheer()};
+  b.onkeydown=e=>{if(e.key=='Enter')b.click()};$('#st').appendChild(b)})})();
+/* ---------- QUIZ ---------- */
+const Q=[['گاندھی جی کو ہم پیار سے کیا پکارتے ہیں؟','ഗാന്ധിജിയെ സ്നേഹത്തോടെ എന്താണ് വിളിക്കുന്നത്?',['باپو','کاکا','ماسٹر'],0,'ഹിന്റ്: കാകാ കാലേൽകർ വിളിച്ച പേര് ഓർക്കൂ.'],
+['کاکا کالیلکر کون تھے؟','കാകാ കാലേൽകർ ആരായിരുന്നു?',['گاندھی جی کے دوست','ٹیچر','ایک چھوٹا بچّہ'],0,'ഹിന്റ്: കഥയുടെ നാലാം വരി നോക്കൂ.'],
+['گاندھی جی کیا تلاش کر رہے تھے؟','ഗാന്ധിജി എന്താണ് തിരഞ്ഞത്?',['کتاب','پنسل','چشمہ'],1,'ഹിന്റ്: അത് "انمول تحفہ" ആണ്!'],
+['آخر پنسل کہاں سے ملی؟','പെൻസിൽ ഒടുവിൽ എവിടെ നിന്ന് കിട്ടി?',['میز کے نیچے','کتاب کے اندر سے','بیگ میں'],1,'ഹിന്റ്: വായിക്കാനുള്ളത്.'],
+['باپو جی کے لیے پنسل کیوں قیمتی تھی؟','ബാപ്പുജിക്ക് പെൻസിൽ എന്തുകൊണ്ട് വിലപ്പെട്ടതായിരുന്നു?',['وہ بہت مہنگی تھی','چھوٹے بچّے کا تحفہ تھی','نئی تھی'],1,'ഹിന്റ്: "اس نے بڑے پیار سے دیا تھا".'],
+['گاندھی جی کا پورا نام کیا ہے؟','ഗാന്ധിജിയുടെ പൂർണ്ണനാമം?',['موہن داس کرم چند گاندھی','جواہر لال نہرو','ابوالکلام آزاد'],0,'ഹിന്റ്: "موہن داس…"'],
+['گاندھی جینتی کب ہے؟','ഗാന്ധി ജയന്തി എപ്പോൾ?',['۲ اکتوبر','۱۵ اگست','۲۶ جنوری'],0,'ഹിന്റ്: കലണ്ടറിൽ ബുധനാഴ്ച (۲۰۲۴).'],
+['بابائے قوم کون ہیں؟','രാഷ്ട്രപിതാവ് ആര്?',['نہرو','آزاد','گاندھی جی'],2,'ഹിന്റ്: പേജ് 71.'],
+['۲۴ اکتوبر ۲۰۲۴ کون سا دن ہے؟','24 ഒക്ടോബർ 2024 ഏത് ദിവസം?',['جمعرات','پیر','اتوار'],0,'ഹിന്റ്: ۲ اکتوبر بدھ ہے، پھر ۷ دن گنیں.'],
+['"پندرہ" کون سا عدد ہے؟','"പന്ത്രഹ്" ഏത് സംഖ്യ?',['۵۱','۱۵','۲۵'],1,'ഹിന്റ്: ۱۰ + ۵']];
+(()=>{const r=$('#quiz');let i=0,sc=0,order=[...Q].sort(()=>Math.random()-.5);
+ const show=()=>{if(i>=order.length){const st='⭐'.repeat(Math.round(sc/order.length*5));r.innerHTML=`<div class="card" style="text-align:center"><h2 class="ur" style="font-size:40px;margin:0">شاباش!</h2><p style="font-size:26px">${sc} / ${order.length} ${st}</p><p class="ml">${sc>=8?'അതിഗംഭീരം! 🎉':sc>=5?'നന്നായി! ഒന്നുകൂടി ശ്രമിക്കൂ.':'സാരമില്ല! കഥ വീണ്ടും വായിച്ച് ശ്രമിക്കൂ.'}</p><button class="btn" id="rs">🔁 دوبارہ · വീണ്ടും</button></div>`;if(sc>=5)cheer();$('#rs').onclick=()=>{i=0;sc=0;order.sort(()=>Math.random()-.5);show()};return}
+  const q=order[i],oi=q[2].map((t,k)=>[t,k]).sort(()=>Math.random()-.5);
+  r.innerHTML=`<div class="card"><div class="bar"><i style="width:${i/order.length*100}%"></i></div><p class="ml">ചോദ്യം ${i+1} / ${order.length} · സ്കോർ ${sc}</p><div class="ur" style="font-size:28px">${words(q[0])}</div><div class="ml">${q[1]}</div><button class="btn sm" id="qs">🔊</button>
+  <div class="opts">${oi.map(([t,k])=>`<button class="opt ur" data-k="${k}">${t}</button>`).join('')}</div><div class="fb" id="fb"></div></div>`;
+  $('#qs').onclick=()=>say(q[0]);let tried=0,done=0;
+  r.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(done)return;if(+b.dataset.k==q[3]){done=1;b.classList.add('ok');if(!tried)sc++;cheer();$('#fb').innerHTML='🎉 شاباش! ശരി!';say('شاباش');
+    const n=el('<button class="btn">اگلا ← അടുത്തത്</button>');n.onclick=()=>{i++;show()};$('#fb').after(n)}
+   else{tried++;b.classList.add('no');b.disabled=true;$('#fb').innerHTML='🤔 ایک بار اور کوشش کیجیے! — '+q[4]}})};
+ show()})();
+</script>
+</body>
+</html>
